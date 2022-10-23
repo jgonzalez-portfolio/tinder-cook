@@ -11,7 +11,7 @@ import SwiftUI
 struct TinderCookApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RecipesDiscoverView()
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  RecipesDiscoverView.swift
 //  TinderCook
 //
 //  Created by Joni Gonzalez on 22/10/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct RecipesDiscoverView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -19,8 +19,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct RecipesDiscoverView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RecipesDiscoverView()
     }
 }

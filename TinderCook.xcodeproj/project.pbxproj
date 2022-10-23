@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59D194BBE2C59CD59B273837 /* Pods_TinderCookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3ED5D23C760E61C725989F4 /* Pods_TinderCookTests.framework */; };
+		8B166CD585FABD7371B4CF3D /* Pods_TinderCook_TinderCookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1F9F1B7A8080280A4CDB0F /* Pods_TinderCook_TinderCookUITests.framework */; };
+		C463F2233A7379AA67834873 /* Pods_TinderCook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1D686105C23D8064C52490 /* Pods_TinderCook.framework */; };
 		F2D114422904C158005E3BC3 /* TinderCookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114412904C158005E3BC3 /* TinderCookApp.swift */; };
-		F2D114442904C158005E3BC3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114432904C158005E3BC3 /* ContentView.swift */; };
+		F2D114442904C158005E3BC3 /* RecipesDiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114432904C158005E3BC3 /* RecipesDiscoverView.swift */; };
 		F2D114462904C159005E3BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2D114452904C159005E3BC3 /* Assets.xcassets */; };
 		F2D114492904C159005E3BC3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2D114482904C159005E3BC3 /* Preview Assets.xcassets */; };
 		F2D114532904C15A005E3BC3 /* TinderCookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114522904C15A005E3BC3 /* TinderCookTests.swift */; };
@@ -34,9 +37,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		048431C140B247BD1D0998A7 /* Pods-TinderCook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderCook.release.xcconfig"; path = "Target Support Files/Pods-TinderCook/Pods-TinderCook.release.xcconfig"; sourceTree = "<group>"; };
+		0B1F9F1B7A8080280A4CDB0F /* Pods_TinderCook_TinderCookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinderCook_TinderCookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E1D686105C23D8064C52490 /* Pods_TinderCook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinderCook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A53CA833A2CF3D777B1CA0F /* Pods-TinderCookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderCookTests.release.xcconfig"; path = "Target Support Files/Pods-TinderCookTests/Pods-TinderCookTests.release.xcconfig"; sourceTree = "<group>"; };
+		80CEB575EE3A6493B8CE7EA6 /* Pods-TinderCook-TinderCookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderCook-TinderCookUITests.release.xcconfig"; path = "Target Support Files/Pods-TinderCook-TinderCookUITests/Pods-TinderCook-TinderCookUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9042286E2F37BDD6AF9E959A /* Pods-TinderCook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderCook.debug.xcconfig"; path = "Target Support Files/Pods-TinderCook/Pods-TinderCook.debug.xcconfig"; sourceTree = "<group>"; };
+		B54980D0C146AA7C04AFC657 /* Pods-TinderCook-TinderCookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderCook-TinderCookUITests.debug.xcconfig"; path = "Target Support Files/Pods-TinderCook-TinderCookUITests/Pods-TinderCook-TinderCookUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C3ED5D23C760E61C725989F4 /* Pods_TinderCookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinderCookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA9C900721C272699EF10459 /* Pods-TinderCookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderCookTests.debug.xcconfig"; path = "Target Support Files/Pods-TinderCookTests/Pods-TinderCookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F2D1143E2904C158005E3BC3 /* TinderCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2D114412904C158005E3BC3 /* TinderCookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderCookApp.swift; sourceTree = "<group>"; };
-		F2D114432904C158005E3BC3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F2D114432904C158005E3BC3 /* RecipesDiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDiscoverView.swift; sourceTree = "<group>"; };
 		F2D114452904C159005E3BC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2D114482904C159005E3BC3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2D1144E2904C15A005E3BC3 /* TinderCookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinderCookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C463F2233A7379AA67834873 /* Pods_TinderCook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59D194BBE2C59CD59B273837 /* Pods_TinderCookTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,12 +79,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B166CD585FABD7371B4CF3D /* Pods_TinderCook_TinderCookUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64AD3129EA7A0CD097C72877 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E1D686105C23D8064C52490 /* Pods_TinderCook.framework */,
+				0B1F9F1B7A8080280A4CDB0F /* Pods_TinderCook_TinderCookUITests.framework */,
+				C3ED5D23C760E61C725989F4 /* Pods_TinderCookTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF03A1ED9A84550A0B1249D8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9042286E2F37BDD6AF9E959A /* Pods-TinderCook.debug.xcconfig */,
+				048431C140B247BD1D0998A7 /* Pods-TinderCook.release.xcconfig */,
+				B54980D0C146AA7C04AFC657 /* Pods-TinderCook-TinderCookUITests.debug.xcconfig */,
+				80CEB575EE3A6493B8CE7EA6 /* Pods-TinderCook-TinderCookUITests.release.xcconfig */,
+				CA9C900721C272699EF10459 /* Pods-TinderCookTests.debug.xcconfig */,
+				6A53CA833A2CF3D777B1CA0F /* Pods-TinderCookTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F2D114352904C158005E3BC3 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +116,8 @@
 				F2D114512904C15A005E3BC3 /* TinderCookTests */,
 				F2D1145B2904C15A005E3BC3 /* TinderCookUITests */,
 				F2D1143F2904C158005E3BC3 /* Products */,
+				CF03A1ED9A84550A0B1249D8 /* Pods */,
+				64AD3129EA7A0CD097C72877 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,9 +134,10 @@
 		F2D114402904C158005E3BC3 /* TinderCook */ = {
 			isa = PBXGroup;
 			children = (
-				F2D1146C2904C2D5005E3BC3 /* Resources */,
 				F2D1146B2904C2CD005E3BC3 /* App */,
-				F2D114432904C158005E3BC3 /* ContentView.swift */,
+				F2D114432904C158005E3BC3 /* RecipesDiscoverView.swift */,
+				F2D1146D2904E363005E3BC3 /* Domain */,
+				F2D1146C2904C2D5005E3BC3 /* Resources */,
 				F2D114472904C159005E3BC3 /* Preview Content */,
 			);
 			path = TinderCook;
@@ -143,6 +184,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F2D1146D2904E363005E3BC3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2D114622904C15A005E3BC3 /* Build configuration list for PBXNativeTarget "TinderCook" */;
 			buildPhases = (
+				A08874DB3B8C7987D26BB60D /* [CP] Check Pods Manifest.lock */,
 				F2D1143A2904C158005E3BC3 /* Sources */,
 				F2D1143B2904C158005E3BC3 /* Frameworks */,
 				F2D1143C2904C158005E3BC3 /* Resources */,
+				FD78C2A41626839E40761290 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,6 +217,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2D114652904C15A005E3BC3 /* Build configuration list for PBXNativeTarget "TinderCookTests" */;
 			buildPhases = (
+				B3F1D9C27386B7DEC06B4066 /* [CP] Check Pods Manifest.lock */,
 				F2D1144A2904C15A005E3BC3 /* Sources */,
 				F2D1144B2904C15A005E3BC3 /* Frameworks */,
 				F2D1144C2904C15A005E3BC3 /* Resources */,
@@ -185,9 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2D114682904C15A005E3BC3 /* Build configuration list for PBXNativeTarget "TinderCookUITests" */;
 			buildPhases = (
+				9E62F31C6ABF03F8313DA4DE /* [CP] Check Pods Manifest.lock */,
 				F2D114542904C15A005E3BC3 /* Sources */,
 				F2D114552904C15A005E3BC3 /* Frameworks */,
 				F2D114562904C15A005E3BC3 /* Resources */,
+				7CF9FB4B75F3BC26F0A35438 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,12 +321,115 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7CF9FB4B75F3BC26F0A35438 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinderCook-TinderCookUITests/Pods-TinderCook-TinderCookUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinderCook-TinderCookUITests/Pods-TinderCook-TinderCookUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TinderCook-TinderCookUITests/Pods-TinderCook-TinderCookUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E62F31C6ABF03F8313DA4DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinderCook-TinderCookUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A08874DB3B8C7987D26BB60D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinderCook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3F1D9C27386B7DEC06B4066 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinderCookTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD78C2A41626839E40761290 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinderCook/Pods-TinderCook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinderCook/Pods-TinderCook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TinderCook/Pods-TinderCook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F2D1143A2904C158005E3BC3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2D114442904C158005E3BC3 /* ContentView.swift in Sources */,
+				F2D114442904C158005E3BC3 /* RecipesDiscoverView.swift in Sources */,
 				F2D114422904C158005E3BC3 /* TinderCookApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +583,7 @@
 		};
 		F2D114632904C15A005E3BC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9042286E2F37BDD6AF9E959A /* Pods-TinderCook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -456,6 +613,7 @@
 		};
 		F2D114642904C15A005E3BC3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 048431C140B247BD1D0998A7 /* Pods-TinderCook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -485,6 +643,7 @@
 		};
 		F2D114662904C15A005E3BC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA9C900721C272699EF10459 /* Pods-TinderCookTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -505,6 +664,7 @@
 		};
 		F2D114672904C15A005E3BC3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A53CA833A2CF3D777B1CA0F /* Pods-TinderCookTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -525,6 +685,7 @@
 		};
 		F2D114692904C15A005E3BC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B54980D0C146AA7C04AFC657 /* Pods-TinderCook-TinderCookUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -543,6 +704,7 @@
 		};
 		F2D1146A2904C15A005E3BC3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80CEB575EE3A6493B8CE7EA6 /* Pods-TinderCook-TinderCookUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

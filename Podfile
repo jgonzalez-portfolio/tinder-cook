@@ -6,6 +6,7 @@ target 'TinderCook' do
   use_frameworks!
 
   # Pods for TinderCook
+  pod 'Alamofire'
 
   target 'TinderCookTests' do
     inherit! :search_paths
