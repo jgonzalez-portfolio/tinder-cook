@@ -94,9 +94,9 @@
 		F2D114402904C158005E3BC3 /* TinderCook */ = {
 			isa = PBXGroup;
 			children = (
-				F2D114412904C158005E3BC3 /* TinderCookApp.swift */,
+				F2D1146C2904C2D5005E3BC3 /* Resources */,
+				F2D1146B2904C2CD005E3BC3 /* App */,
 				F2D114432904C158005E3BC3 /* ContentView.swift */,
-				F2D114452904C159005E3BC3 /* Assets.xcassets */,
 				F2D114472904C159005E3BC3 /* Preview Content */,
 			);
 			path = TinderCook;
@@ -125,6 +125,22 @@
 				F2D1145E2904C15A005E3BC3 /* TinderCookUITestsLaunchTests.swift */,
 			);
 			path = TinderCookUITests;
+			sourceTree = "<group>";
+		};
+		F2D1146B2904C2CD005E3BC3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F2D114412904C158005E3BC3 /* TinderCookApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F2D1146C2904C2D5005E3BC3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F2D114452904C159005E3BC3 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
