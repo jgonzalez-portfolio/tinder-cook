@@ -17,6 +17,16 @@
 		F2D114532904C15A005E3BC3 /* TinderCookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114522904C15A005E3BC3 /* TinderCookTests.swift */; };
 		F2D1145D2904C15A005E3BC3 /* TinderCookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1145C2904C15A005E3BC3 /* TinderCookUITests.swift */; };
 		F2D1145F2904C15A005E3BC3 /* TinderCookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1145E2904C15A005E3BC3 /* TinderCookUITestsLaunchTests.swift */; };
+		F2D1147229058A75005E3BC3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1147129058A75005E3BC3 /* NetworkError.swift */; };
+		F2D1147429058A99005E3BC3 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1147329058A99005E3BC3 /* EndPointType.swift */; };
+		F2D1147629058AB6005E3BC3 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1147529058AB6005E3BC3 /* HTTPTask.swift */; };
+		F2D1147929058B0D005E3BC3 /* TCRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1147829058B0D005E3BC3 /* TCRouter.swift */; };
+		F2D1147D29058B60005E3BC3 /* NetworkRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1147C29058B60005E3BC3 /* NetworkRouterProtocol.swift */; };
+		F2D1148029058BAD005E3BC3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1147F29058BAD005E3BC3 /* NetworkManager.swift */; };
+		F2D1148329058BFE005E3BC3 /* FoodAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1148229058BFE005E3BC3 /* FoodAPI.swift */; };
+		F2D114862905D581005E3BC3 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114852905D581005E3BC3 /* Recipe.swift */; };
+		F2D114882905D850005E3BC3 /* RandomRecipesParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114872905D850005E3BC3 /* RandomRecipesParameters.swift */; };
+		F2D1148A2905E2A8005E3BC3 /* FoodApiDefaultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114892905E2A8005E3BC3 /* FoodApiDefaultResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +66,16 @@
 		F2D114582904C15A005E3BC3 /* TinderCookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinderCookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2D1145C2904C15A005E3BC3 /* TinderCookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderCookUITests.swift; sourceTree = "<group>"; };
 		F2D1145E2904C15A005E3BC3 /* TinderCookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderCookUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F2D1147129058A75005E3BC3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F2D1147329058A99005E3BC3 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		F2D1147529058AB6005E3BC3 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		F2D1147829058B0D005E3BC3 /* TCRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCRouter.swift; sourceTree = "<group>"; };
+		F2D1147C29058B60005E3BC3 /* NetworkRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouterProtocol.swift; sourceTree = "<group>"; };
+		F2D1147F29058BAD005E3BC3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F2D1148229058BFE005E3BC3 /* FoodAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAPI.swift; sourceTree = "<group>"; };
+		F2D114852905D581005E3BC3 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		F2D114872905D850005E3BC3 /* RandomRecipesParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRecipesParameters.swift; sourceTree = "<group>"; };
+		F2D114892905E2A8005E3BC3 /* FoodApiDefaultResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodApiDefaultResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,8 +154,9 @@
 		F2D114402904C158005E3BC3 /* TinderCook */ = {
 			isa = PBXGroup;
 			children = (
+				F2D1148B2905EA3A005E3BC3 /* Scenes */,
+				F2D1146E29058A48005E3BC3 /* Data */,
 				F2D1146B2904C2CD005E3BC3 /* App */,
-				F2D114432904C158005E3BC3 /* RecipesDiscoverView.swift */,
 				F2D1146D2904E363005E3BC3 /* Domain */,
 				F2D1146C2904C2D5005E3BC3 /* Resources */,
 				F2D114472904C159005E3BC3 /* Preview Content */,
@@ -187,8 +208,81 @@
 		F2D1146D2904E363005E3BC3 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				F2D114842905D40E005E3BC3 /* Models */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		F2D1146E29058A48005E3BC3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F2D1146F29058A50005E3BC3 /* Networking */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F2D1146F29058A50005E3BC3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F2D1148129058BCC005E3BC3 /* Endpoints */,
+				F2D1147E29058B96005E3BC3 /* Manager */,
+				F2D1147029058A5A005E3BC3 /* Service */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F2D1147029058A5A005E3BC3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F2D1147129058A75005E3BC3 /* NetworkError.swift */,
+				F2D1147329058A99005E3BC3 /* EndPointType.swift */,
+				F2D1147529058AB6005E3BC3 /* HTTPTask.swift */,
+				F2D1147829058B0D005E3BC3 /* TCRouter.swift */,
+				F2D1147C29058B60005E3BC3 /* NetworkRouterProtocol.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F2D1147E29058B96005E3BC3 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F2D1147F29058BAD005E3BC3 /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		F2D1148129058BCC005E3BC3 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				F2D114892905E2A8005E3BC3 /* FoodApiDefaultResponse.swift */,
+				F2D114872905D850005E3BC3 /* RandomRecipesParameters.swift */,
+				F2D1148229058BFE005E3BC3 /* FoodAPI.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		F2D114842905D40E005E3BC3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F2D114852905D581005E3BC3 /* Recipe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F2D1148B2905EA3A005E3BC3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F2D1148C2905EA42005E3BC3 /* RecipesDiscover */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F2D1148C2905EA42005E3BC3 /* RecipesDiscover */ = {
+			isa = PBXGroup;
+			children = (
+				F2D114432904C158005E3BC3 /* RecipesDiscoverView.swift */,
+			);
+			path = RecipesDiscover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,8 +523,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2D1148029058BAD005E3BC3 /* NetworkManager.swift in Sources */,
+				F2D1147429058A99005E3BC3 /* EndPointType.swift in Sources */,
+				F2D1148329058BFE005E3BC3 /* FoodAPI.swift in Sources */,
+				F2D1147929058B0D005E3BC3 /* TCRouter.swift in Sources */,
+				F2D1147629058AB6005E3BC3 /* HTTPTask.swift in Sources */,
+				F2D1148A2905E2A8005E3BC3 /* FoodApiDefaultResponse.swift in Sources */,
+				F2D1147D29058B60005E3BC3 /* NetworkRouterProtocol.swift in Sources */,
+				F2D114882905D850005E3BC3 /* RandomRecipesParameters.swift in Sources */,
+				F2D1147229058A75005E3BC3 /* NetworkError.swift in Sources */,
 				F2D114442904C158005E3BC3 /* RecipesDiscoverView.swift in Sources */,
 				F2D114422904C158005E3BC3 /* TinderCookApp.swift in Sources */,
+				F2D114862905D581005E3BC3 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

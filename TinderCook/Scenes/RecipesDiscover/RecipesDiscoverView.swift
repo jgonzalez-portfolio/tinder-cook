@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RecipesDiscoverView: View {
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
