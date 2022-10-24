@@ -27,6 +27,13 @@
 		F2D114862905D581005E3BC3 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114852905D581005E3BC3 /* Recipe.swift */; };
 		F2D114882905D850005E3BC3 /* RandomRecipesParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114872905D850005E3BC3 /* RandomRecipesParameters.swift */; };
 		F2D1148A2905E2A8005E3BC3 /* FoodApiDefaultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114892905E2A8005E3BC3 /* FoodApiDefaultResponse.swift */; };
+		F2D1148F2905F0A1005E3BC3 /* RecipesDiscoverDisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1148E2905F0A1005E3BC3 /* RecipesDiscoverDisplayLogic.swift */; };
+		F2D1149129060973005E3BC3 /* RecipesDiscoverInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1149029060973005E3BC3 /* RecipesDiscoverInteractor.swift */; };
+		F2D11493290609EF005E3BC3 /* RecipesDiscoverPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D11492290609EF005E3BC3 /* RecipesDiscoverPresenter.swift */; };
+		F2D1149529060A1C005E3BC3 /* RecipesDiscoverViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1149429060A1C005E3BC3 /* RecipesDiscoverViewConfigurator.swift */; };
+		F2D1149729061047005E3BC3 /* RecipesDiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1149629061047005E3BC3 /* RecipesDiscoverModel.swift */; };
+		F2D1149B2906144B005E3BC3 /* RecipesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1149A2906144B005E3BC3 /* RecipesRepository.swift */; };
+		F2D114A22906279A005E3BC3 /* RecipesDiscoverDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114A12906279A005E3BC3 /* RecipesDiscoverDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +83,13 @@
 		F2D114852905D581005E3BC3 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		F2D114872905D850005E3BC3 /* RandomRecipesParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRecipesParameters.swift; sourceTree = "<group>"; };
 		F2D114892905E2A8005E3BC3 /* FoodApiDefaultResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodApiDefaultResponse.swift; sourceTree = "<group>"; };
+		F2D1148E2905F0A1005E3BC3 /* RecipesDiscoverDisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDiscoverDisplayLogic.swift; sourceTree = "<group>"; };
+		F2D1149029060973005E3BC3 /* RecipesDiscoverInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDiscoverInteractor.swift; sourceTree = "<group>"; };
+		F2D11492290609EF005E3BC3 /* RecipesDiscoverPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDiscoverPresenter.swift; sourceTree = "<group>"; };
+		F2D1149429060A1C005E3BC3 /* RecipesDiscoverViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDiscoverViewConfigurator.swift; sourceTree = "<group>"; };
+		F2D1149629061047005E3BC3 /* RecipesDiscoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDiscoverModel.swift; sourceTree = "<group>"; };
+		F2D1149A2906144B005E3BC3 /* RecipesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRepository.swift; sourceTree = "<group>"; };
+		F2D114A12906279A005E3BC3 /* RecipesDiscoverDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDiscoverDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,10 +168,10 @@
 		F2D114402904C158005E3BC3 /* TinderCook */ = {
 			isa = PBXGroup;
 			children = (
-				F2D1148B2905EA3A005E3BC3 /* Scenes */,
-				F2D1146E29058A48005E3BC3 /* Data */,
 				F2D1146B2904C2CD005E3BC3 /* App */,
+				F2D1148B2905EA3A005E3BC3 /* Presentation */,
 				F2D1146D2904E363005E3BC3 /* Domain */,
+				F2D1146E29058A48005E3BC3 /* Data */,
 				F2D1146C2904C2D5005E3BC3 /* Resources */,
 				F2D114472904C159005E3BC3 /* Preview Content */,
 			);
@@ -208,6 +222,8 @@
 		F2D1146D2904E363005E3BC3 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				F2D1149929061409005E3BC3 /* Repositories */,
+				F2D11498290611C7005E3BC3 /* UseCases */,
 				F2D114842905D40E005E3BC3 /* Models */,
 			);
 			path = Domain;
@@ -216,7 +232,7 @@
 		F2D1146E29058A48005E3BC3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F2D1146F29058A50005E3BC3 /* Networking */,
+				F2D1149E29061E6D005E3BC3 /* DataSources */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -269,20 +285,73 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		F2D1148B2905EA3A005E3BC3 /* Scenes */ = {
+		F2D1148B2905EA3A005E3BC3 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				F2D1148C2905EA42005E3BC3 /* RecipesDiscover */,
 			);
-			path = Scenes;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		F2D1148C2905EA42005E3BC3 /* RecipesDiscover */ = {
 			isa = PBXGroup;
 			children = (
+				F2D1149C29061CFE005E3BC3 /* Configurator */,
 				F2D114432904C158005E3BC3 /* RecipesDiscoverView.swift */,
+				F2D1148E2905F0A1005E3BC3 /* RecipesDiscoverDisplayLogic.swift */,
+				F2D1149029060973005E3BC3 /* RecipesDiscoverInteractor.swift */,
+				F2D11492290609EF005E3BC3 /* RecipesDiscoverPresenter.swift */,
+				F2D114A12906279A005E3BC3 /* RecipesDiscoverDataStore.swift */,
 			);
 			path = RecipesDiscover;
+			sourceTree = "<group>";
+		};
+		F2D11498290611C7005E3BC3 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F2D1149D29061E2C005E3BC3 /* Recipes */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F2D1149929061409005E3BC3 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				F2D1149A2906144B005E3BC3 /* RecipesRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		F2D1149C29061CFE005E3BC3 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				F2D1149429060A1C005E3BC3 /* RecipesDiscoverViewConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		F2D1149D29061E2C005E3BC3 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				F2D1149629061047005E3BC3 /* RecipesDiscoverModel.swift */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		F2D1149E29061E6D005E3BC3 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				F2D1146F29058A50005E3BC3 /* Networking */,
+				F2D1149F29061E8D005E3BC3 /* CoreData */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		F2D1149F29061E8D005E3BC3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,11 +592,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2D11493290609EF005E3BC3 /* RecipesDiscoverPresenter.swift in Sources */,
 				F2D1148029058BAD005E3BC3 /* NetworkManager.swift in Sources */,
 				F2D1147429058A99005E3BC3 /* EndPointType.swift in Sources */,
 				F2D1148329058BFE005E3BC3 /* FoodAPI.swift in Sources */,
+				F2D1149729061047005E3BC3 /* RecipesDiscoverModel.swift in Sources */,
+				F2D1149129060973005E3BC3 /* RecipesDiscoverInteractor.swift in Sources */,
 				F2D1147929058B0D005E3BC3 /* TCRouter.swift in Sources */,
+				F2D1148F2905F0A1005E3BC3 /* RecipesDiscoverDisplayLogic.swift in Sources */,
 				F2D1147629058AB6005E3BC3 /* HTTPTask.swift in Sources */,
+				F2D114A22906279A005E3BC3 /* RecipesDiscoverDataStore.swift in Sources */,
+				F2D1149B2906144B005E3BC3 /* RecipesRepository.swift in Sources */,
+				F2D1149529060A1C005E3BC3 /* RecipesDiscoverViewConfigurator.swift in Sources */,
 				F2D1148A2905E2A8005E3BC3 /* FoodApiDefaultResponse.swift in Sources */,
 				F2D1147D29058B60005E3BC3 /* NetworkRouterProtocol.swift in Sources */,
 				F2D114882905D850005E3BC3 /* RandomRecipesParameters.swift in Sources */,

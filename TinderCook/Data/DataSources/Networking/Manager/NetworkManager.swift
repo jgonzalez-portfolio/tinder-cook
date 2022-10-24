@@ -14,7 +14,7 @@ struct NetworkManager {
     static let environment: NetworkEnvironment = .production
     
     func getRandomRecipies(with params: RandomRecipesParameters = .init()
-                           ,_ completionHandler: @escaping (Result<[Recipe], NetworkError>) -> ()) {
+                           ,_ completionHandler: @escaping (Result<[Recipe], NetworkError>) -> Void) {
         
         routerFoodAPI.request(expectedData: FoodApiRandomRecipesResponse<[Recipe]>.self, from: .randomRecipes(params)) { response in
             
