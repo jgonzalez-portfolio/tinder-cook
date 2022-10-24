@@ -18,7 +18,7 @@ class RecipesDiscoverPresenterImplementation {
 extension RecipesDiscoverPresenterImplementation: RecipesDiscoverPresentationLogic {
     
     func displayRecipesFrom(response: RecipesDiscoverModel.LoadRandomRecipes.Response) {
-        let viewModel = RecipesDiscoverModel.LoadRandomRecipes.ViewModel(recipes: response.recipes)
+        let viewModel = RecipesDiscoverModel.LoadRandomRecipes.ViewModel(recipesToSave: response.recipes)
         view?.displayRandomRecipes(viewModel: viewModel)
     }
 }

@@ -8,29 +8,40 @@
 import Foundation
 
 // MARK: - Recipe
-class Recipe: Codable {
-    let vegetarian, vegan, glutenFree, dairyFree: Bool
-    let veryHealthy, cheap, veryPopular, sustainable: Bool
-    let lowFodmap: Bool
-    let weightWatcherSmartPoints: Int
-    let gaps: String
-    let preparationMinutes, cookingMinutes, aggregateLikes, healthScore: Int
-    let creditsText, license, sourceName: String
-    let pricePerServing: Double
-    let extendedIngredients: [ExtendedIngredient]
-    let id: Int
-    let title: String
-    let readyInMinutes, servings: Int
-    let sourceURL: String
-    let image: String
-    let imageType, summary: String
-    let cuisines: [JSONAny]
-    let dishTypes, diets: [String]
-    let occasions: [JSONAny]
-    let instructions: String
-    let analyzedInstructions: [AnalyzedInstruction]
+class Recipe: Codable, Hashable {
+
+    let vegetarian, vegan, glutenFree, dairyFree: Bool?
+    let veryHealthy, cheap, veryPopular, sustainable: Bool?
+    let lowFodmap: Bool?
+    let weightWatcherSmartPoints: Int?
+    let gaps: String?
+    let preparationMinutes, cookingMinutes, aggregateLikes, healthScore: Int?
+    let creditsText, license, sourceName: String?
+    let pricePerServing: Double?
+    let extendedIngredients: [ExtendedIngredient]?
+    let id: Int?
+    let title: String?
+    let readyInMinutes, servings: Int?
+    let sourceURL: String?
+    let image: String?
+    let imageType, summary: String?
+    let cuisines: [JSONAny]?
+    let dishTypes, diets: [String]?
+    let occasions: [JSONAny]?
+    let instructions: String?
+    let analyzedInstructions: [AnalyzedInstruction]?
     let originalID: JSONNull?
-    let spoonacularSourceURL: String
+    let spoonacularSourceURL: String?
+    
+    static func == (lhs: Recipe, rhs: Recipe) -> Bool {
+        guard let lhsId = lhs.id, let rhsId = rhs.id else { return false }
+        return lhsId == rhsId
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
 
     enum CodingKeys: String, CodingKey {
         case vegetarian, vegan, glutenFree, dairyFree, veryHealthy, cheap, veryPopular, sustainable, lowFodmap, weightWatcherSmartPoints, gaps, preparationMinutes, cookingMinutes, aggregateLikes, healthScore, creditsText, license, sourceName, pricePerServing, extendedIngredients, id, title, readyInMinutes, servings
@@ -40,7 +51,7 @@ class Recipe: Codable {
         case spoonacularSourceURL = "spoonacularSourceUrl"
     }
 
-    init(vegetarian: Bool, vegan: Bool, glutenFree: Bool, dairyFree: Bool, veryHealthy: Bool, cheap: Bool, veryPopular: Bool, sustainable: Bool, lowFodmap: Bool, weightWatcherSmartPoints: Int, gaps: String, preparationMinutes: Int, cookingMinutes: Int, aggregateLikes: Int, healthScore: Int, creditsText: String, license: String, sourceName: String, pricePerServing: Double, extendedIngredients: [ExtendedIngredient], id: Int, title: String, readyInMinutes: Int, servings: Int, sourceURL: String, image: String, imageType: String, summary: String, cuisines: [JSONAny], dishTypes: [String], diets: [String], occasions: [JSONAny], instructions: String, analyzedInstructions: [AnalyzedInstruction], originalID: JSONNull?, spoonacularSourceURL: String) {
+    init(vegetarian: Bool?, vegan: Bool?, glutenFree: Bool?, dairyFree: Bool?, veryHealthy: Bool?, cheap: Bool?, veryPopular: Bool?, sustainable: Bool?, lowFodmap: Bool?, weightWatcherSmartPoints: Int?, gaps: String?, preparationMinutes: Int?, cookingMinutes: Int?, aggregateLikes: Int?, healthScore: Int?, creditsText: String?, license: String?, sourceName: String?, pricePerServing: Double?, extendedIngredients: [ExtendedIngredient]?, id: Int?, title: String?, readyInMinutes: Int?, servings: Int?, sourceURL: String?, image: String?, imageType: String?, summary: String?, cuisines: [JSONAny]?, dishTypes: [String]?, diets: [String]?, occasions: [JSONAny]?, instructions: String?, analyzedInstructions: [AnalyzedInstruction]?, originalID: JSONNull?, spoonacularSourceURL: String?) {
         self.vegetarian = vegetarian
         self.vegan = vegan
         self.glutenFree = glutenFree
@@ -82,10 +93,10 @@ class Recipe: Codable {
 
 // MARK: - AnalyzedInstruction
 class AnalyzedInstruction: Codable {
-    let name: String
-    let steps: [Step]
+    let name: String?
+    let steps: [Step]?
 
-    init(name: String, steps: [Step]) {
+    init(name: String?, steps: [Step]?) {
         self.name = name
         self.steps = steps
     }
@@ -93,12 +104,12 @@ class AnalyzedInstruction: Codable {
 
 // MARK: - Step
 class Step: Codable {
-    let number: Int
-    let step: String
-    let ingredients, equipment: [Ent]
+    let number: Int?
+    let step: String?
+    let ingredients, equipment: [Ent]?
     let length: Length?
 
-    init(number: Int, step: String, ingredients: [Ent], equipment: [Ent], length: Length?) {
+    init(number: Int?, step: String?, ingredients: [Ent]?, equipment: [Ent]?, length: Length?) {
         self.number = number
         self.step = step
         self.ingredients = ingredients
@@ -109,10 +120,10 @@ class Step: Codable {
 
 // MARK: - Ent
 class Ent: Codable {
-    let id: Int
-    let name, localizedName, image: String
+    let id: Int?
+    let name, localizedName, image: String?
 
-    init(id: Int, name: String, localizedName: String, image: String) {
+    init(id: Int?, name: String?, localizedName: String?, image: String?) {
         self.id = id
         self.name = name
         self.localizedName = localizedName
@@ -122,10 +133,10 @@ class Ent: Codable {
 
 // MARK: - Length
 class Length: Codable {
-    let number: Int
-    let unit: String
+    let number: Int?
+    let unit: String?
 
-    init(number: Int, unit: String) {
+    init(number: Int?, unit: String?) {
         self.number = number
         self.unit = unit
     }
@@ -133,15 +144,15 @@ class Length: Codable {
 
 // MARK: - ExtendedIngredient
 class ExtendedIngredient: Codable {
-    let id: Int
-    let aisle, image, consistency, name: String
-    let nameClean, original, originalName: String
-    let amount: Double
-    let unit: String
-    let meta: [String]
-    let measures: Measures
+    let id: Int?
+    let aisle, image, consistency, name: String?
+    let nameClean, original, originalName: String?
+    let amount: Double?
+    let unit: String?
+    let meta: [String]?
+    let measures: Measures?
 
-    init(id: Int, aisle: String, image: String, consistency: String, name: String, nameClean: String, original: String, originalName: String, amount: Double, unit: String, meta: [String], measures: Measures) {
+    init(id: Int?, aisle: String?, image: String?, consistency: String?, name: String?, nameClean: String?, original: String?, originalName: String?, amount: Double?, unit: String?, meta: [String]?, measures: Measures?) {
         self.id = id
         self.aisle = aisle
         self.image = image
@@ -159,9 +170,9 @@ class ExtendedIngredient: Codable {
 
 // MARK: - Measures
 class Measures: Codable {
-    let us, metric: Metric
+    let us, metric: Metric?
 
-    init(us: Metric, metric: Metric) {
+    init(us: Metric?, metric: Metric?) {
         self.us = us
         self.metric = metric
     }
@@ -169,10 +180,10 @@ class Measures: Codable {
 
 // MARK: - Metric
 class Metric: Codable {
-    let amount: Double
-    let unitShort, unitLong: String
+    let amount: Double?
+    let unitShort, unitLong: String?
 
-    init(amount: Double, unitShort: String, unitLong: String) {
+    init(amount: Double?, unitShort: String?, unitLong: String?) {
         self.amount = amount
         self.unitShort = unitShort
         self.unitLong = unitLong
@@ -190,11 +201,7 @@ class JSONNull: Codable, Hashable {
     public var hashValue: Int {
         return 0
     }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(hashValue)
-    }
-    
+
     public init() {}
 
     public required init(from decoder: Decoder) throws {

@@ -15,7 +15,7 @@ public protocol FoodEndpointParameters {
 enum NetworkEnvironment {
     case qa
     case production
-    case staging
+    case mock
 }
 
 public enum FoodAPI {
@@ -27,9 +27,9 @@ extension FoodAPI: EndPointType {
     
     var baseURL: String {
         switch NetworkManager.environment {
-        case .qa: return "http://localhost:3000/"
+        case .qa: return "http://localhost:3000"
         case .production: return "https://api.spoonacular.com"
-        case .staging: return "http://localhost:3000"
+        case .mock: return "http://localhost:3000"
         }
     }
     

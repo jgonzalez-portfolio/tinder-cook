@@ -9,5 +9,14 @@ import Foundation
 import SwiftUI
 
 class RecipesDiscoverDataStore: ObservableObject {
-    @Published var recipes: [Recipe] = []
+    @Published var recipesToSave: [Recipe] = []
+    
+    func getIndex(recipe: Recipe) -> Int {
+        
+        let index = recipesToSave.firstIndex { currentRecipe in
+            return currentRecipe == recipe
+        }
+        
+        return index ?? 0
+    }
 }

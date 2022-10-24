@@ -15,13 +15,13 @@ class Router<EndPoint: EndPointType>: NetworkRouterProtocol {
     
     func request<GenericObject: Decodable>(expectedData: GenericObject.Type,from route: EndPoint, completion: @escaping NetworkRouterCompletion<GenericObject>) {
         
-        let secretParam = ["apiKey":"68eb9c0df3a542609dd2da1399cf4f9c"]
+        let secretParam = ["apiKey":"1a50f6bc70db47a599b590b9838d55c3"]
         
         let request = AF.request(route.endpointURL, method: route.httpMethod, parameters: route.parameters?.combine(secretParam), headers: route.headers)
         
         request.validate().responseData { response in
             print("123 ", response.request?.urlRequest ?? "No URL")
-            
+            print("123 \(response.debugDescription)")
             switch response.result {
             case .success(let dataResponse):
                 

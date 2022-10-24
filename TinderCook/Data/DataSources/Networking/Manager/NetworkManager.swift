@@ -11,20 +11,16 @@ struct NetworkManager {
     
     private let routerFoodAPI = Router<FoodAPI>()
 
-    static let environment: NetworkEnvironment = .production
+    static let environment: NetworkEnvironment = .mock
     
     func getRandomRecipies(with params: RandomRecipesParameters = .init()
-                           ,_ completionHandler: @escaping (Result<[Recipe], NetworkError>) -> Void) {
+                           ,_ completionHandler: @escaping (Result<[Recipe]?, NetworkError>) -> Void) {
         
-        routerFoodAPI.request(expectedData: FoodApiRandomRecipesResponse<[Recipe]>.self, from: .randomRecipes(params)) { response in
+        routerFoodAPI.request(expectedData: FoodApiRandomRecipesResponse.self, from: .randomRecipes(params)) { response in
             
             switch response {
             case .success(let recipes):
-                if let datota = recipes.data {
-                    completionHandler(.success(datota))
-                } else {
-                    completionHandler(.failure(.unwrapperError))
-                }
+                completionHandler(.success(recipes.data))
             case .failure(_):
                 completionHandler(.failure(.parametersNil))
             }

@@ -9,7 +9,7 @@ import Foundation
 
 protocol RecipesRepository {
     func fetchRandomRecipes(with params: RandomRecipesParameters?,
-                            _ completionHandler: @escaping (Result<[Recipe], Error>) -> Void)
+                            _ completionHandler: @escaping (Result<[Recipe]?, Error>) -> Void)
 }
 
 class RecipesRepositoryImplementation {
@@ -19,7 +19,7 @@ class RecipesRepositoryImplementation {
 extension RecipesRepositoryImplementation: RecipesRepository {
     
     func fetchRandomRecipes(with params: RandomRecipesParameters?,
-                            _ completionHandler: @escaping (Result<[Recipe], Error>) -> Void) {
+                            _ completionHandler: @escaping (Result<[Recipe]?, Error>) -> Void) {
         
         networkManager.getRandomRecipies { result in
             switch result {

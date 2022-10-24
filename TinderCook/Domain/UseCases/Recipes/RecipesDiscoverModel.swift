@@ -17,11 +17,11 @@ enum RecipesDiscoverModel {
         }
         
         struct Response {
-            var recipes: [Recipe]
+            var recipes: [Recipe]?
         }
         
         struct ViewModel {
-            var recipes: [Recipe]
+            var recipesToSave: [Recipe]?
         }
     }
 

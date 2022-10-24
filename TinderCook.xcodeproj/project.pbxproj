@@ -34,6 +34,7 @@
 		F2D1149729061047005E3BC3 /* RecipesDiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1149629061047005E3BC3 /* RecipesDiscoverModel.swift */; };
 		F2D1149B2906144B005E3BC3 /* RecipesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1149A2906144B005E3BC3 /* RecipesRepository.swift */; };
 		F2D114A22906279A005E3BC3 /* RecipesDiscoverDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114A12906279A005E3BC3 /* RecipesDiscoverDataStore.swift */; };
+		F2D114A52906793D005E3BC3 /* StackRecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114A42906793D005E3BC3 /* StackRecipeCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		F2D1149629061047005E3BC3 /* RecipesDiscoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDiscoverModel.swift; sourceTree = "<group>"; };
 		F2D1149A2906144B005E3BC3 /* RecipesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRepository.swift; sourceTree = "<group>"; };
 		F2D114A12906279A005E3BC3 /* RecipesDiscoverDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDiscoverDataStore.swift; sourceTree = "<group>"; };
+		F2D114A42906793D005E3BC3 /* StackRecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackRecipeCardView.swift; sourceTree = "<group>"; };
+		F2D114A62907067C005E3BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +171,7 @@
 		F2D114402904C158005E3BC3 /* TinderCook */ = {
 			isa = PBXGroup;
 			children = (
+				F2D114A62907067C005E3BC3 /* Info.plist */,
 				F2D1146B2904C2CD005E3BC3 /* App */,
 				F2D1148B2905EA3A005E3BC3 /* Presentation */,
 				F2D1146D2904E363005E3BC3 /* Domain */,
@@ -296,6 +300,7 @@
 		F2D1148C2905EA42005E3BC3 /* RecipesDiscover */ = {
 			isa = PBXGroup;
 			children = (
+				F2D114A32906791A005E3BC3 /* UIComponents */,
 				F2D1149C29061CFE005E3BC3 /* Configurator */,
 				F2D114432904C158005E3BC3 /* RecipesDiscoverView.swift */,
 				F2D1148E2905F0A1005E3BC3 /* RecipesDiscoverDisplayLogic.swift */,
@@ -352,6 +357,14 @@
 			children = (
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F2D114A32906791A005E3BC3 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F2D114A42906793D005E3BC3 /* StackRecipeCardView.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -595,6 +608,7 @@
 				F2D11493290609EF005E3BC3 /* RecipesDiscoverPresenter.swift in Sources */,
 				F2D1148029058BAD005E3BC3 /* NetworkManager.swift in Sources */,
 				F2D1147429058A99005E3BC3 /* EndPointType.swift in Sources */,
+				F2D114A52906793D005E3BC3 /* StackRecipeCardView.swift in Sources */,
 				F2D1148329058BFE005E3BC3 /* FoodAPI.swift in Sources */,
 				F2D1149729061047005E3BC3 /* RecipesDiscoverModel.swift in Sources */,
 				F2D1149129060973005E3BC3 /* RecipesDiscoverInteractor.swift in Sources */,
@@ -773,6 +787,7 @@
 				DEVELOPMENT_TEAM = NB9XP58HLG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TinderCook/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -803,6 +818,7 @@
 				DEVELOPMENT_TEAM = NB9XP58HLG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TinderCook/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
