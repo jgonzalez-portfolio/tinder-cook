@@ -9,7 +9,7 @@ import Foundation
 
 protocol RecipesRepository {
     func fetchRandomRecipes(with params: RandomRecipesParameters?,
-                            _ completionHandler: @escaping (Result<[Recipe]?, Error>) -> Void)
+                            _ completionHandler: @escaping (Result<[Recipe]?, DiscoverRecipeError>) -> Void)
 }
 
 class RecipesRepositoryImplementation {
@@ -18,8 +18,7 @@ class RecipesRepositoryImplementation {
 
 extension RecipesRepositoryImplementation: RecipesRepository {
     
-    func fetchRandomRecipes(with params: RandomRecipesParameters?,
-                            _ completionHandler: @escaping (Result<[Recipe]?, Error>) -> Void) {
+    func fetchRandomRecipes(with params: RandomRecipesParameters?,_ completionHandler: @escaping (Result<[Recipe]?, DiscoverRecipeError>) -> Void) {
         
         networkManager.getRandomRecipies { result in
             switch result {
@@ -30,4 +29,9 @@ extension RecipesRepositoryImplementation: RecipesRepository {
             }
         }
     }
+}
+
+enum DiscoverRecipeError: String, Error {
+    case failFetchRandomRecipes = "There was an error while unwrapping data"
+    case BadConnection = "Ups! We had an error with internet connection"
 }

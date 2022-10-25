@@ -35,6 +35,7 @@
 		F2D1149B2906144B005E3BC3 /* RecipesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1149A2906144B005E3BC3 /* RecipesRepository.swift */; };
 		F2D114A22906279A005E3BC3 /* RecipesDiscoverDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114A12906279A005E3BC3 /* RecipesDiscoverDataStore.swift */; };
 		F2D114A52906793D005E3BC3 /* StackRecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114A42906793D005E3BC3 /* StackRecipeCardView.swift */; };
+		F2D114A9290729B5005E3BC3 /* RecipesDiscoverWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114A8290729B5005E3BC3 /* RecipesDiscoverWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		F2D114A12906279A005E3BC3 /* RecipesDiscoverDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDiscoverDataStore.swift; sourceTree = "<group>"; };
 		F2D114A42906793D005E3BC3 /* StackRecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackRecipeCardView.swift; sourceTree = "<group>"; };
 		F2D114A62907067C005E3BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F2D114A8290729B5005E3BC3 /* RecipesDiscoverWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDiscoverWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +309,7 @@
 				F2D1149029060973005E3BC3 /* RecipesDiscoverInteractor.swift */,
 				F2D11492290609EF005E3BC3 /* RecipesDiscoverPresenter.swift */,
 				F2D114A12906279A005E3BC3 /* RecipesDiscoverDataStore.swift */,
+				F2D114A8290729B5005E3BC3 /* RecipesDiscoverWorker.swift */,
 			);
 			path = RecipesDiscover;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				F2D1148F2905F0A1005E3BC3 /* RecipesDiscoverDisplayLogic.swift in Sources */,
 				F2D1147629058AB6005E3BC3 /* HTTPTask.swift in Sources */,
 				F2D114A22906279A005E3BC3 /* RecipesDiscoverDataStore.swift in Sources */,
+				F2D114A9290729B5005E3BC3 /* RecipesDiscoverWorker.swift in Sources */,
 				F2D1149B2906144B005E3BC3 /* RecipesRepository.swift in Sources */,
 				F2D1149529060A1C005E3BC3 /* RecipesDiscoverViewConfigurator.swift in Sources */,
 				F2D1148A2905E2A8005E3BC3 /* FoodApiDefaultResponse.swift in Sources */,

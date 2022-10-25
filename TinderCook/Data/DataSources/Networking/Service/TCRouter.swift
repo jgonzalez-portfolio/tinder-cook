@@ -12,10 +12,10 @@ public typealias NetworkRouterCompletion<GenericObject: Decodable> = (_ response
 
 class Router<EndPoint: EndPointType>: NetworkRouterProtocol {
     private var task: URLSessionTask?
-    
+    let secretParam = ["apiKey":"1a50f6bc70db47a599b590b9838d55c3"]
+
     func request<GenericObject: Decodable>(expectedData: GenericObject.Type,from route: EndPoint, completion: @escaping NetworkRouterCompletion<GenericObject>) {
         
-        let secretParam = ["apiKey":"1a50f6bc70db47a599b590b9838d55c3"]
         
         let request = AF.request(route.endpointURL, method: route.httpMethod, parameters: route.parameters?.combine(secretParam), headers: route.headers)
         
@@ -24,11 +24,11 @@ class Router<EndPoint: EndPointType>: NetworkRouterProtocol {
             print("123 \(response.debugDescription)")
             switch response.result {
             case .success(let dataResponse):
-                
                 do {
-                    if let responseDecoded = try? JSONDecoder().decode(GenericObject.self, from: dataResponse) {
+                    let responseDecoded = try JSONDecoder().decode(GenericObject.self, from: dataResponse)
                         completion(.success(responseDecoded))
-                    }
+                } catch {
+                    completion(.failure(.responseValidationFailed(reason: .dataFileNil)))
                 }
 
             case .failure(let failure):

@@ -104,20 +104,23 @@ struct StackRecipeCardView: View {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            if let _ = discoverData.recipesToSave.first {
+            if let _ = discoverData.recipes.first {
                 let _ = withAnimation {
-                    discoverData.recipesToSave.removeFirst()
+                    discoverData.recipes.removeFirst()
                 }
             }
         }
     }
     
     func leftSwipe() {
-        print("123 Left Swipe")
+        discoverData.recipesUnLiked.append(self.recipe)
+        print("123 Left Swipe \(discoverData.recipesUnLiked.count)")
+
     }
     
     func rightSwipe() {
-        print("123 Right Swipe")
+        discoverData.recipesLiked.append(self.recipe)
+        print("123 Right Swipe \(discoverData.recipesLiked.count)")
     }
 }
 

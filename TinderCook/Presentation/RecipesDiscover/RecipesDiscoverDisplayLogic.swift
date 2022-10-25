@@ -9,4 +9,5 @@ import Foundation
 
 protocol RecipesDiscoverDisplayLogic {
     func displayRandomRecipes(viewModel: RecipesDiscoverModel.LoadRandomRecipes.ViewModel)
+    func displayAlertError(error: DiscoverRecipesErrorModel)
 }

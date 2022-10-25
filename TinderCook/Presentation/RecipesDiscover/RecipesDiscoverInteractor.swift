@@ -9,6 +9,8 @@ import Foundation
 
 protocol RecipesDiscoverInteractor {
     func fetchRandomRecipes(_ request: RecipesDiscoverModel.LoadRandomRecipes.Request)
+    func addRecipeToMyFavorites(_ request: RecipesDiscoverModel.SaveRecipe.Request)
+    func removeRecipeToMyFavorites(_ request: RecipesDiscoverModel.RemoveRecipe.Request)
 }
 
 class RecipesDiscoverInteractorImplementation {
@@ -18,6 +20,7 @@ class RecipesDiscoverInteractorImplementation {
 }
 
 extension RecipesDiscoverInteractorImplementation: RecipesDiscoverInteractor {
+
     
     func fetchRandomRecipes(_ request: RecipesDiscoverModel.LoadRandomRecipes.Request) {
         repository?.fetchRandomRecipes(with: request.params, { [weak self] result in
@@ -26,8 +29,17 @@ extension RecipesDiscoverInteractorImplementation: RecipesDiscoverInteractor {
                 let response = RecipesDiscoverModel.LoadRandomRecipes.Response(recipes: success)
                 self?.presenter?.displayRecipesFrom(response: response)
             case .failure(let failure):
-                ()
+                self?.presenter?.displayAErrorFetchingRecipes(message: failure.localizedDescription)
             }
         })
     }
+    
+    func addRecipeToMyFavorites(_ request: RecipesDiscoverModel.SaveRecipe.Request) {
+        ()
+    }
+    
+    func removeRecipeToMyFavorites(_ request: RecipesDiscoverModel.RemoveRecipe.Request) {
+        
+    }
+    
 }

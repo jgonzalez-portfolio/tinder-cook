@@ -24,5 +24,34 @@ enum RecipesDiscoverModel {
             var recipesToSave: [Recipe]?
         }
     }
-
+    
+    enum SaveRecipe {
+        
+        struct Request {
+            var recipeId: Int
+        }
+        
+        struct Response {
+            var recipe: Recipe?
+        }
+        
+        struct ViewModel {
+            var recipesToSave: [Recipe]?
+        }
+    }
+    
+    enum RemoveRecipe {
+        
+        struct Request {
+            var recipeId: Int
+        }
+        
+        struct Response {
+            var recipe: Recipe?
+        }
+        
+        struct ViewModel {
+            var recipesToSave: [Recipe]?
+        }
+    }
 }

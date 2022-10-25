@@ -14,15 +14,18 @@ struct NetworkManager {
     static let environment: NetworkEnvironment = .mock
     
     func getRandomRecipies(with params: RandomRecipesParameters = .init()
-                           ,_ completionHandler: @escaping (Result<[Recipe]?, NetworkError>) -> Void) {
+                           ,_ completionHandler: @escaping (Result<[Recipe]?, DiscoverRecipeError>) -> Void) {
         
         routerFoodAPI.request(expectedData: FoodApiRandomRecipesResponse.self, from: .randomRecipes(params)) { response in
             
             switch response {
             case .success(let recipes):
                 completionHandler(.success(recipes.data))
-            case .failure(_):
-                completionHandler(.failure(.parametersNil))
+            case .failure(let error):
+                if error.isResponseValidationError {
+                    completionHandler(.failure(.BadConnection))
+                }
+                completionHandler(.failure(.failFetchRandomRecipes))
             }
         }
     }
