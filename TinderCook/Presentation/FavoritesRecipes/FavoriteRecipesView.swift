@@ -7,9 +7,14 @@
 
 import SwiftUI
 
+protocol FavoriteRecipesDisplayLogic {
+    
+}
+
 struct FavoriteRecipesView: View {
     @EnvironmentObject var discoverData: RecipesDiscoverDataStore
-
+    var interactor: FavoriteRecipesViewInteractor?
+    
     var body: some View {
         List {
             ForEach(discoverData.recipesLiked.reversed(), id: \.self) { recipe in
@@ -19,6 +24,10 @@ struct FavoriteRecipesView: View {
             }
         }
     }
+}
+
+extension FavoriteRecipesView: FavoriteRecipesDisplayLogic {
+    
 }
 
 struct FavoriteRecipesView_Previews: PreviewProvider {

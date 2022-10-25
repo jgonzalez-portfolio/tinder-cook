@@ -8,11 +8,14 @@
 import Foundation
 
 protocol RecipesRepository {
-    func fetchRandomRecipes(with params: RandomRecipesParameters?,
-                            _ completionHandler: @escaping (Result<[Recipe]?, DiscoverRecipeError>) -> Void)
+    func fetchRandomRecipes(with params: RandomRecipesParameters?,_ completionHandler: @escaping (Result<[Recipe]?, DiscoverRecipeError>) -> Void)
+    func fetchFavoriteRecipes(with params: RandomRecipesParameters?,_ completionHandler: @escaping ([Recipe]?) -> Void)
+    
 }
 
 class RecipesRepositoryImplementation {
+    
+    let db = RecipesPersistentController()
     let networkManager: NetworkManager = .init()
 }
 
@@ -28,6 +31,10 @@ extension RecipesRepositoryImplementation: RecipesRepository {
                 completionHandler(.failure(error))
             }
         }
+    }
+    
+    func fetchFavoriteRecipes(with params: RandomRecipesParameters?, _ completionHandler: @escaping ([Recipe]?) -> Void) {
+        
     }
 }
 

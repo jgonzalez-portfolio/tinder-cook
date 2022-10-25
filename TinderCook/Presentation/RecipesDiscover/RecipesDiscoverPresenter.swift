@@ -30,6 +30,4 @@ extension RecipesDiscoverPresenterImplementation: RecipesDiscoverPresentationLog
         errorModel.showingAlert = true
         view?.displayAlertError(error: errorModel)
     }
-    
-    
 }

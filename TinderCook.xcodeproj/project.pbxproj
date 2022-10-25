@@ -37,6 +37,11 @@
 		F2D114A52906793D005E3BC3 /* StackRecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114A42906793D005E3BC3 /* StackRecipeCardView.swift */; };
 		F2D114A9290729B5005E3BC3 /* RecipesDiscoverWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114A8290729B5005E3BC3 /* RecipesDiscoverWorker.swift */; };
 		F2D114BC290774FD005E3BC3 /* FavoriteRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114BB290774FD005E3BC3 /* FavoriteRecipesView.swift */; };
+		F2D114CF29078EBD005E3BC3 /* RecipesDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2D114CD29078EBD005E3BC3 /* RecipesDB.xcdatamodeld */; };
+		F2D114D129078F2A005E3BC3 /* RecipesPersistentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114D029078F2A005E3BC3 /* RecipesPersistentController.swift */; };
+		F2D114D329079890005E3BC3 /* FavoriteRecipesViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114D229079890005E3BC3 /* FavoriteRecipesViewInteractor.swift */; };
+		F2D114D529079985005E3BC3 /* FavoriteRecipesViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114D429079985005E3BC3 /* FavoriteRecipesViewPresenter.swift */; };
+		F2D114D7290799D9005E3BC3 /* FavoriteRecipesViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114D6290799D9005E3BC3 /* FavoriteRecipesViewConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +102,11 @@
 		F2D114A62907067C005E3BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F2D114A8290729B5005E3BC3 /* RecipesDiscoverWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDiscoverWorker.swift; sourceTree = "<group>"; };
 		F2D114BB290774FD005E3BC3 /* FavoriteRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipesView.swift; sourceTree = "<group>"; };
+		F2D114CE29078EBD005E3BC3 /* RecipesDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecipesDB.xcdatamodel; sourceTree = "<group>"; };
+		F2D114D029078F2A005E3BC3 /* RecipesPersistentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesPersistentController.swift; sourceTree = "<group>"; };
+		F2D114D229079890005E3BC3 /* FavoriteRecipesViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipesViewInteractor.swift; sourceTree = "<group>"; };
+		F2D114D429079985005E3BC3 /* FavoriteRecipesViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipesViewPresenter.swift; sourceTree = "<group>"; };
+		F2D114D6290799D9005E3BC3 /* FavoriteRecipesViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipesViewConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,17 +362,10 @@
 		F2D1149E29061E6D005E3BC3 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				F2D114CC29078E82005E3BC3 /* CoreData */,
 				F2D1146F29058A50005E3BC3 /* Networking */,
-				F2D1149F29061E8D005E3BC3 /* CoreData */,
 			);
 			path = DataSources;
-			sourceTree = "<group>";
-		};
-		F2D1149F29061E8D005E3BC3 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		F2D114A32906791A005E3BC3 /* UIComponents */ = {
@@ -377,8 +380,20 @@
 			isa = PBXGroup;
 			children = (
 				F2D114BB290774FD005E3BC3 /* FavoriteRecipesView.swift */,
+				F2D114D229079890005E3BC3 /* FavoriteRecipesViewInteractor.swift */,
+				F2D114D429079985005E3BC3 /* FavoriteRecipesViewPresenter.swift */,
+				F2D114D6290799D9005E3BC3 /* FavoriteRecipesViewConfigurator.swift */,
 			);
 			path = FavoritesRecipes;
+			sourceTree = "<group>";
+		};
+		F2D114CC29078E82005E3BC3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F2D114CD29078EBD005E3BC3 /* RecipesDB.xcdatamodeld */,
+				F2D114D029078F2A005E3BC3 /* RecipesPersistentController.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -622,8 +637,11 @@
 				F2D11493290609EF005E3BC3 /* RecipesDiscoverPresenter.swift in Sources */,
 				F2D114BC290774FD005E3BC3 /* FavoriteRecipesView.swift in Sources */,
 				F2D1148029058BAD005E3BC3 /* NetworkManager.swift in Sources */,
+				F2D114CF29078EBD005E3BC3 /* RecipesDB.xcdatamodeld in Sources */,
+				F2D114D129078F2A005E3BC3 /* RecipesPersistentController.swift in Sources */,
 				F2D1147429058A99005E3BC3 /* EndPointType.swift in Sources */,
 				F2D114A52906793D005E3BC3 /* StackRecipeCardView.swift in Sources */,
+				F2D114D7290799D9005E3BC3 /* FavoriteRecipesViewConfigurator.swift in Sources */,
 				F2D1148329058BFE005E3BC3 /* FoodAPI.swift in Sources */,
 				F2D1149729061047005E3BC3 /* RecipesDiscoverModel.swift in Sources */,
 				F2D1149129060973005E3BC3 /* RecipesDiscoverInteractor.swift in Sources */,
@@ -640,7 +658,9 @@
 				F2D1147229058A75005E3BC3 /* NetworkError.swift in Sources */,
 				F2D114442904C158005E3BC3 /* RecipesDiscoverView.swift in Sources */,
 				F2D114422904C158005E3BC3 /* TinderCookApp.swift in Sources */,
+				F2D114D529079985005E3BC3 /* FavoriteRecipesViewPresenter.swift in Sources */,
 				F2D114862905D581005E3BC3 /* Recipe.swift in Sources */,
+				F2D114D329079890005E3BC3 /* FavoriteRecipesViewInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -973,6 +993,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F2D114CD29078EBD005E3BC3 /* RecipesDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F2D114CE29078EBD005E3BC3 /* RecipesDB.xcdatamodel */,
+			);
+			currentVersion = F2D114CE29078EBD005E3BC3 /* RecipesDB.xcdatamodel */;
+			path = RecipesDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F2D114362904C158005E3BC3 /* Project object */;
 }
