@@ -19,8 +19,8 @@ class Recipe: Codable, Hashable {
     let creditsText, license, sourceName: String?
     let pricePerServing: Double?
     let extendedIngredients: [ExtendedIngredient]?
-    let id: Int?
-    let title: String?
+    let id: Int
+    let title: String
     let readyInMinutes, servings: Int?
     let sourceURL: String?
     let image: String?
@@ -34,8 +34,7 @@ class Recipe: Codable, Hashable {
     let spoonacularSourceURL: String?
     
     static func == (lhs: Recipe, rhs: Recipe) -> Bool {
-        guard let lhsId = lhs.id, let rhsId = rhs.id else { return false }
-        return lhsId == rhsId
+        return lhs.id == rhs.id
     }
     
     func hash(into hasher: inout Hasher) {
@@ -51,7 +50,7 @@ class Recipe: Codable, Hashable {
         case spoonacularSourceURL = "spoonacularSourceUrl"
     }
 
-    init(vegetarian: Bool?, vegan: Bool?, glutenFree: Bool?, dairyFree: Bool?, veryHealthy: Bool?, cheap: Bool?, veryPopular: Bool?, sustainable: Bool?, lowFodmap: Bool?, weightWatcherSmartPoints: Int?, gaps: String?, preparationMinutes: Int?, cookingMinutes: Int?, aggregateLikes: Int?, healthScore: Int?, creditsText: String?, license: String?, sourceName: String?, pricePerServing: Double?, extendedIngredients: [ExtendedIngredient]?, id: Int?, title: String?, readyInMinutes: Int?, servings: Int?, sourceURL: String?, image: String?, imageType: String?, summary: String?, cuisines: [JSONAny]?, dishTypes: [String]?, diets: [String]?, occasions: [JSONAny]?, instructions: String?, analyzedInstructions: [AnalyzedInstruction]?, originalID: JSONNull?, spoonacularSourceURL: String?) {
+    init(vegetarian: Bool?, vegan: Bool?, glutenFree: Bool?, dairyFree: Bool?, veryHealthy: Bool?, cheap: Bool?, veryPopular: Bool?, sustainable: Bool?, lowFodmap: Bool?, weightWatcherSmartPoints: Int?, gaps: String?, preparationMinutes: Int?, cookingMinutes: Int?, aggregateLikes: Int?, healthScore: Int?, creditsText: String?, license: String?, sourceName: String?, pricePerServing: Double?, extendedIngredients: [ExtendedIngredient]?, id: Int, title: String, readyInMinutes: Int?, servings: Int?, sourceURL: String?, image: String?, imageType: String?, summary: String?, cuisines: [JSONAny]?, dishTypes: [String]?, diets: [String]?, occasions: [JSONAny]?, instructions: String?, analyzedInstructions: [AnalyzedInstruction]?, originalID: JSONNull?, spoonacularSourceURL: String?) {
         self.vegetarian = vegetarian
         self.vegan = vegan
         self.glutenFree = glutenFree

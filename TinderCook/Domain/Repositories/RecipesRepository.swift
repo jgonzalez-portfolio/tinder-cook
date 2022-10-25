@@ -5,17 +5,17 @@
 //  Created by Joni Gonzalez on 23/10/2022.
 //
 
-import Foundation
+import SwiftUI
 
 protocol RecipesRepository {
     func fetchRandomRecipes(with params: RandomRecipesParameters?,_ completionHandler: @escaping (Result<[Recipe]?, DiscoverRecipeError>) -> Void)
-    func fetchFavoriteRecipes(with params: RandomRecipesParameters?,_ completionHandler: @escaping ([Recipe]?) -> Void)
-    
+    func fetchFavoriteRecipes(with params: RandomRecipesParameters?,_ completionHandler: @escaping ([RecipeModel]) -> Void)
+    func saveToFavorites(recipe: RecipeModel, _ completionHandler: @escaping (() -> ()))
 }
 
-class RecipesRepositoryImplementation {
+class RecipesRepositoryImplementation: ObservableObject {
     
-    let db = RecipesPersistentController()
+    var recipies: [RecipeModel] = []
     let networkManager: NetworkManager = .init()
 }
 
@@ -33,12 +33,19 @@ extension RecipesRepositoryImplementation: RecipesRepository {
         }
     }
     
-    func fetchFavoriteRecipes(with params: RandomRecipesParameters?, _ completionHandler: @escaping ([Recipe]?) -> Void) {
-        
+    func fetchFavoriteRecipes(with params: RandomRecipesParameters?, _ completionHandler: @escaping ([RecipeModel]) -> Void) {
+        completionHandler(recipies)
+    }
+    
+    func saveToFavorites(recipe: RecipeModel, _ completionHandler: @escaping (() -> ())) {
+        recipies.append(recipe)
     }
 }
 
 enum DiscoverRecipeError: String, Error {
     case failFetchRandomRecipes = "There was an error while unwrapping data"
     case BadConnection = "Ups! We had an error with internet connection"
+    case failWhileSavingRecipe = "There was an error while saving the recipe"
+    case failMatchingRecipeId = "There was an error matching recipe id"
+
 }

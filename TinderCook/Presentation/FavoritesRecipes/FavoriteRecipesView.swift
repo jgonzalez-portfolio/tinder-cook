@@ -7,29 +7,35 @@
 
 import SwiftUI
 
-protocol FavoriteRecipesDisplayLogic {
-    
-}
-
 struct FavoriteRecipesView: View {
-    @EnvironmentObject var discoverData: RecipesDiscoverDataStore
-    var interactor: FavoriteRecipesViewInteractor?
+    @ObservedObject var viewModel: FavoriteRecipesViewModel = .init()
+    @EnvironmentObject var repository: RecipesRepositoryImplementation
     
     var body: some View {
         List {
-            ForEach(discoverData.recipesLiked.reversed(), id: \.self) { recipe in
-                NavigationLink(recipe.title ?? "Sin titulo") {
-                    Text(recipe.title ?? "")
+            ForEach(viewModel.favoriteRecipes, id: \.self) { recipe in
+                HStack {
+                    AsyncImage(url: recipe.getImageURL()) { recipeImg in
+                        recipeImg
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .aspectRatio(contentMode: .fit)
+                            .scaledToFill()
+                            .cornerRadius(5)
+                        
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    Text(recipe.getTitle())
+
                 }
             }
+        }.onAppear {
+            viewModel.repository = repository
+            viewModel.getFavoriteRecipes()
         }
     }
 }
-
-extension FavoriteRecipesView: FavoriteRecipesDisplayLogic {
-    
-}
-
 struct FavoriteRecipesView_Previews: PreviewProvider {
     static var previews: some View {
         FavoriteRecipesView()

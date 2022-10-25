@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct StackRecipeCardView: View {
-    @EnvironmentObject var discoverData: RecipesDiscoverDataStore
-    var recipe: Recipe
+    @EnvironmentObject var viewModel: RecipesDiscoverViewModel
+    var recipe: RecipeModel
     @State var offset: CGFloat = 0
     @GestureState var isDraggin: Bool = false
     @State var endSwipe: Bool = false
@@ -19,11 +19,11 @@ struct StackRecipeCardView: View {
         GeometryReader { geometryProxy in
             let size = geometryProxy.size
             let frameWidth = size.width - 20.0
-            let index = CGFloat(discoverData.getIndex(recipe: self.recipe))
+            let index = CGFloat(viewModel.getIndex(recipe: self.recipe))
             let topOffset = (index <= 2 ? index : 2) * 30
             
             ZStack {
-                AsyncImage(url: URL(string: recipe.image ?? "")) { recipeImg in
+                AsyncImage(url: recipe.getImageURL()) { recipeImg in
                     recipeImg
                         .resizable()
                         .frame(width: frameWidth, height: frameWidth)
@@ -77,18 +77,17 @@ struct StackRecipeCardView: View {
         .onAppear {
             action = { value, swipe in
                 let width = rectScreenBound.width - 50
-                if let recipeId = recipe.id {
-                    if value == recipeId {
-                        offset = ((swipe == .right) ? width : -width)  * 2
-                        endSwipeAction()
-                        if swipe == .right {
-                            rightSwipe()
-                        } else {
-                            leftSwipe()
-                        }
+                if value == recipe.id {
+                    offset = ((swipe == .right) ? width : -width)  * 2
+                    endSwipeAction()
+                    if swipe == .right {
+                        rightSwipe()
+                    } else {
+                        leftSwipe()
                     }
                 }
-
+                
+                
             }
         }
     }
@@ -104,23 +103,24 @@ struct StackRecipeCardView: View {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            if let _ = discoverData.recipes.first {
+            if let _ = viewModel.recipes.first {
                 let _ = withAnimation {
-                    discoverData.recipes.removeFirst()
+                    viewModel.recipes.removeFirst()
                 }
             }
         }
     }
     
     func leftSwipe() {
-        discoverData.recipesUnLiked.append(self.recipe)
-        print("123 Left Swipe \(discoverData.recipesUnLiked.count)")
-
+       // TODO: an action to left
     }
     
     func rightSwipe() {
-        discoverData.recipesLiked.append(self.recipe)
-        print("123 Right Swipe \(discoverData.recipesLiked.count)")
+        do {
+            try viewModel.addRecipeToMyFavorites(recipe.id)
+        } catch {
+            
+        }
     }
 }
 

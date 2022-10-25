@@ -9,8 +9,8 @@ import SwiftUI
 
 struct RecipesDiscoverView: View {
     
-    var interactor: RecipesDiscoverInteractor?
-    @ObservedObject var recipesDataStore = RecipesDiscoverDataStore()
+    @ObservedObject var viewModel: RecipesDiscoverViewModel = .init()
+    
     @State var swipeAction: ((Int, SwipeType) -> ())?
     @State var showingAlert: Bool = false
     @State var message: String = ""
@@ -19,7 +19,7 @@ struct RecipesDiscoverView: View {
         NavigationView {
             VStack {
                 NavigationLink("Favorites") {
-                    FavoriteRecipesView().environmentObject(recipesDataStore)
+                    FavoriteRecipesView().environmentObject(viewModel.repository)
                 }.frame(maxWidth: .infinity, alignment: .leading)
                     .overlay {
                         Text("Discover")
@@ -29,15 +29,15 @@ struct RecipesDiscoverView: View {
                 
                 // Recipes
                 ZStack {
-                    if recipesDataStore.recipes.isEmpty {
+                    if viewModel.recipes.isEmpty {
                         HStack {
                             Text("Come back later... ")
                             ProgressView()
                         }
                     } else {
-                        ForEach(recipesDataStore.recipes.reversed(), id: \.self) { recipe in
+                        ForEach(viewModel.recipes.reversed(), id: \.self) { recipe in
                             StackRecipeCardView(recipe: recipe, action: $swipeAction)
-                                .environmentObject(recipesDataStore)
+                                .environmentObject(viewModel)
                         }
                     }
                 }
@@ -46,61 +46,27 @@ struct RecipesDiscoverView: View {
                 
                 // Actions
                 HStack(spacing: 15) {
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "arrowshape.turn.up.backward")
-                            .font(.system(size: 15, weight: .bold))
-                            .foregroundColor(.white)
-                            .shadow(radius: 5)
-                            .padding(13)
-                            .background(Color.gray)
-                            .clipShape(Circle())
-                    }
+
+                    CircleButton(name: "magnifyingglass",
+                                 color: Color.gray,
+                                 sizeByPriority: .low) {}
                     
-                    // action 2
-                    Button {
-                        
-                        doSwipeTo(.left)
-                        
-                    } label: {
-                        Image(systemName: "xmark")
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(.white)
-                            .shadow(radius: 5)
-                            .padding(18)
-                            .background(Color.pink)
-                            .clipShape(Circle())
-                    }
+                    CircleButton(name: "xmark",
+                                 color: Color.pink,
+                                 sizeByPriority: .medium) { doSwipeTo(.left) }
                     
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "star.fill")
-                            .font(.system(size: 15, weight: .bold))
-                            .foregroundColor(.white)
-                            .shadow(radius: 5)
-                            .padding(13)
-                            .background(Color.yellow)
-                            .clipShape(Circle())
-                    }
+                    CircleButton(name: "star.fill",
+                                 color: Color.yellow,
+                                 sizeByPriority: .low) { doSwipeTo(.left) }
                     
-                    Button {
-                        doSwipeTo()
-                    } label: {
-                        Image(systemName: "suit.heart.fill")
-                            .font(.system(size: 20, weight: .bold))
-                            .foregroundColor(.white)
-                            .shadow(radius: 5)
-                            .padding(18)
-                            .background(Color.green)
-                            .clipShape(Circle())
-                    }
+                    CircleButton(name: "suit.heart.fill",
+                                 color: Color.green,
+                                 sizeByPriority: .high) { doSwipeTo() }
                     
                 }
                 .padding(.bottom)
                 .alert(isPresented: self.$showingAlert) {
-                    Alert(title: Text("Hola"))
+                    Alert(title: Text("Ups hubo un error vuelva a intentar."))
                 }
                 
             }
@@ -113,38 +79,21 @@ struct RecipesDiscoverView: View {
     }
     
     func doSwipeTo(_ swipeType: SwipeType = .right) {
-        guard let first = recipesDataStore.recipes.reversed().first,
-              let id = first.id else { return }
-        self.swipeAction?(id, swipeType)
-        
-        switch swipeType {
-        case .right:
-            let request = RecipesDiscoverModel.SaveRecipe.Request(recipeId: id)
-            interactor?.addRecipeToMyFavorites(request)
-        case .left:
-            let request = RecipesDiscoverModel.RemoveRecipe.Request(recipeId: id)
-            interactor?.removeRecipeToMyFavorites(request)
-        }
+        guard let first = viewModel.recipes.reversed().first else { return }
+        self.swipeAction?(first.id, swipeType)
     }
-}
-
-extension RecipesDiscoverView: RecipesDiscoverDisplayLogic {
     
-    func displayRandomRecipes(viewModel: RecipesDiscoverModel.LoadRandomRecipes.ViewModel) {
-        if let recipes = viewModel.recipesToSave {
-            recipesDataStore.recipes = recipes
+    func saveFavorite() {
+        guard let first = viewModel.recipes.reversed().first else { return }
+        do {
+            try self.viewModel.addRecipeToMyFavorites(first.id)
+        } catch {
+            
         }
     }
     
-    func fetchRecipes() {
-        let request = RecipesDiscoverModel.LoadRandomRecipes.Request()
-        interactor?.fetchRandomRecipes(request)
-    }
-    
-    func displayAlertError(error: DiscoverRecipesErrorModel) {
-        self.message = error.message
-        self.showingAlert = true
-        
+    private func fetchRecipes() {
+        viewModel.fetchRandomRecipes()
     }
 }
 
