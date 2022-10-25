@@ -36,6 +36,7 @@
 		F2D114A22906279A005E3BC3 /* RecipesDiscoverDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114A12906279A005E3BC3 /* RecipesDiscoverDataStore.swift */; };
 		F2D114A52906793D005E3BC3 /* StackRecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114A42906793D005E3BC3 /* StackRecipeCardView.swift */; };
 		F2D114A9290729B5005E3BC3 /* RecipesDiscoverWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114A8290729B5005E3BC3 /* RecipesDiscoverWorker.swift */; };
+		F2D114BC290774FD005E3BC3 /* FavoriteRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D114BB290774FD005E3BC3 /* FavoriteRecipesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		F2D114A42906793D005E3BC3 /* StackRecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackRecipeCardView.swift; sourceTree = "<group>"; };
 		F2D114A62907067C005E3BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F2D114A8290729B5005E3BC3 /* RecipesDiscoverWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDiscoverWorker.swift; sourceTree = "<group>"; };
+		F2D114BB290774FD005E3BC3 /* FavoriteRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 		F2D1148B2905EA3A005E3BC3 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F2D114BA29077480005E3BC3 /* FavoritesRecipes */,
 				F2D1148C2905EA42005E3BC3 /* RecipesDiscover */,
 			);
 			path = Presentation;
@@ -368,6 +371,14 @@
 				F2D114A42906793D005E3BC3 /* StackRecipeCardView.swift */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		F2D114BA29077480005E3BC3 /* FavoritesRecipes */ = {
+			isa = PBXGroup;
+			children = (
+				F2D114BB290774FD005E3BC3 /* FavoriteRecipesView.swift */,
+			);
+			path = FavoritesRecipes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -609,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2D11493290609EF005E3BC3 /* RecipesDiscoverPresenter.swift in Sources */,
+				F2D114BC290774FD005E3BC3 /* FavoriteRecipesView.swift in Sources */,
 				F2D1148029058BAD005E3BC3 /* NetworkManager.swift in Sources */,
 				F2D1147429058A99005E3BC3 /* EndPointType.swift in Sources */,
 				F2D114A52906793D005E3BC3 /* StackRecipeCardView.swift in Sources */,
